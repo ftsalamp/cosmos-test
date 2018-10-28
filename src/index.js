@@ -1,12 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import ComplexComponent from './components/ComplexComponent.jsx';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-ReactDOM.render(<App />, document.getElementById('root'));
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: http://bit.ly/CRA-PWA
-serviceWorker.unregister();
+ReactDOM.render(
+    <Router>
+        <Switch>
+            <Route path='/([0-9]{14})/(.+)' render={({match}) =>
+                <ComplexComponent url={match.params[1]} timestamp={match.params[0]} />
+            } />
+        </Switch>
+    </Router>, document.getElementById('root'));

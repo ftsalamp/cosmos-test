@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Switch } from 'react-router-dom';
-import ComplexComponent from '../ComplexComponent'
+import ComplexComponent from '../complex-component'
 
 export default [
     {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
-import SimpleComponent from "./SimpleComponent";
-import LoaderComponent from "./LoaderComponent";
+import SimpleComponent from "./simple-component";
+import LoaderComponent from "./loader-component";
 
 
 export default class ComplexComponent extends React.Component {
@@ -47,8 +47,12 @@ export default class ComplexComponent extends React.Component {
 
     _checkTimestamps () {
         if (this.props.timestamp === '11111111111111') {
-            this._redirectToValidatedTimestamps = true;
-            window.setTimeout(this._setNewURL('22222222222222'),10000);
+            console.warn('---------before---------');
+            fetch('/users').then(() => {
+                console.warn('---------fetched---------');
+                this._redirectToValidatedTimestamps = true;
+                window.setTimeout(this._setNewURL('22222222222222'),10000);
+            });
         } else if (this.props.timestamp === '22222222222222') {
             try {
                 throw URIError

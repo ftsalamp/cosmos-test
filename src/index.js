@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ComplexComponent from './components/ComplexComponent.jsx';
+import ComplexComponent from './components/complex-component.jsx';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 ReactDOM.render(

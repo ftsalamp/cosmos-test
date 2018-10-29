@@ -26,6 +26,10 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "react-cosmos": "^4.6.4"
+    "enzyme": "^3.7.0",
+    "enzyme-adapter-react-16": "^1.6.0",
+    "react-cosmos": "^4.6.4",
+    "react-cosmos-test": "^4.6.4",
+    "react-cosmos-fetch-proxy":"^4.6.1"
   }
 }
